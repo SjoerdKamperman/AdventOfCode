@@ -66,7 +66,7 @@ namespace AdventOfCode2020.Day4
             Console.WriteLine($"Duration of creating list Of Passports: {timer.ElapsedMilliseconds}");
         }
 
-        public void ReturnValidPassports()
+        public int ReturnValidPassports()
         {
             var counter = 0;
             foreach (var passport in Passports)
@@ -79,6 +79,7 @@ namespace AdventOfCode2020.Day4
                     
             }
             Console.WriteLine("Valid Passports: " + counter);
+            return counter;
         }
     }
 }
