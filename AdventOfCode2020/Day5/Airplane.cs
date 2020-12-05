@@ -31,12 +31,12 @@ namespace AdventOfCode2020.Day5
 
         public int GetHighestSeatNumber()
         {
-            Seats = Seats.OrderByDescending(x => x.SeatId).ToList();
+            Seats = Seats.OrderBy(x => x.SeatId).ToList();
             foreach (var seat in Seats)
             {
                 Console.WriteLine("Seat NR: " + seat.SeatId);
             }
-            return Seats.First().SeatId;
+            return Seats.Last().SeatId;
         }
 
         public int FindEmptySeat()
@@ -46,7 +46,6 @@ namespace AdventOfCode2020.Day5
             {
                 list.Add(seat.SeatId);
             }
-            list.Sort();
             var emptySeat = Enumerable.Range(list.First(), list.Count).Except(list);
             return emptySeat.First();
         }
