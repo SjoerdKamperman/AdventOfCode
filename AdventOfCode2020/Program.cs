@@ -2,6 +2,7 @@
 using AdventOfCode2020.Day2;
 using AdventOfCode2020.Day3;
 using AdventOfCode2020.Day4;
+using AdventOfCode2020.Day5;
 using System;
 
 namespace AdventOfCode2020
@@ -31,9 +32,13 @@ namespace AdventOfCode2020
             //Console.WriteLine("Outcome is: " + result);
 
             //Day 4
-            var day4 = new ProgramDay4(@"C:\Users\skamperm\source\repos\AdventOfCode\AdventOfCode2020\Day4\day4.txt");
-            day4.ConvertInputToPassportList();
-            day4.ReturnValidPassports();
+            //var day4 = new ProgramDay4(@"C:\Users\skamperm\source\repos\AdventOfCode\AdventOfCode2020\Day4\day4.txt");
+            //day4.ConvertInputToPassportList();
+            //day4.ReturnValidPassports();
+
+            //Day 5
+            var day5 = new ProgramDay5(@"C:\Users\skamperm\source\repos\AdventOfCode\AdventOfCode2020\Day5\day5.txt");
+            day5.ExecuteProgram();
         }
     }
 }
