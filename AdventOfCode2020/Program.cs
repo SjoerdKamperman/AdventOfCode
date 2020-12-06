@@ -3,6 +3,7 @@ using AdventOfCode2020.Day2;
 using AdventOfCode2020.Day3;
 using AdventOfCode2020.Day4;
 using AdventOfCode2020.Day5;
+using AdventOfCode2020.Day6;
 using System;
 
 namespace AdventOfCode2020
@@ -37,8 +38,13 @@ namespace AdventOfCode2020
             //day4.ReturnValidPassports();
 
             //Day 5
-            var day5 = new ProgramDay5(@"C:\Users\skamperm\source\repos\AdventOfCode\AdventOfCode2020\Day5\day5.txt");
-            day5.ExecuteProgram();
+            //var day5 = new ProgramDay5(@"C:\Users\skamperm\source\repos\AdventOfCode\AdventOfCode2020\Day5\day5.txt");
+            //day5.ExecuteProgram();
+
+            //Day 6
+            var day6 = new ProgramDay6(@"C:\Users\skamperm\source\repos\AdventOfCode\AdventOfCode2020\Day6\day6.txt");
+            day6.ConvertInputToGroupAnswers();
+            day6.SumUpAnsweredYes();
         }
     }
 }
