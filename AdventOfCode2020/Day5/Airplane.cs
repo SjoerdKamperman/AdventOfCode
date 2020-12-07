@@ -18,11 +18,11 @@ namespace AdventOfCode2020.Day5
                 var columnLine = line.Substring(7);
 
                 Console.WriteLine("Start search row (F/B)");
-                var finalRow = BinarySearchBoardingPass(rowLine, 127);
+                var finalRow = BinarySearchBoardingPass(rowLine);
                 Console.WriteLine($"Row found = {finalRow}");
 
                 Console.WriteLine("Start search column (R/L)");
-                var finalColumn = BinarySearchBoardingPass(columnLine, 7);
+                var finalColumn = BinarySearchBoardingPass(columnLine);
                 Console.WriteLine($"Column found = {finalColumn}");
 
                 Seats.Add(new Seat(finalRow, finalColumn)); 
@@ -50,27 +50,31 @@ namespace AdventOfCode2020.Day5
             return emptySeat.First();
         }
 
-        private int BinarySearchBoardingPass(string input, int posibilities)
+        private int BinarySearchBoardingPass(string input)
         {
-            double start = 0.0;
-            double end = posibilities;
-            foreach (var character in input)
-            {
-                Console.WriteLine($"Current character = {character}");
-                bool upperHalf = character.Equals('B') || character.Equals('R');
-                if (upperHalf)
-                {
-                    var temp = Math.Ceiling((end + start) / 2);
-                    start = temp;
-                }
-                else
-                {
-                    var temp = Math.Floor((end + start) / 2);
-                    end = temp;
-                }
-            }
+            var binaryString = Regex.Replace(input, @"[B|R]", "1");
+            var binaryStringCompleted = Regex.Replace(binaryString, @"[F|L]", "0");
 
-            return (int)start;
+            return Convert.ToInt32(binaryStringCompleted, 2);
+            //double start = 0.0;
+            //double end = posibilities;
+            //foreach (var character in input)
+            //{
+            //    Console.WriteLine($"Current character = {character}");
+            //    bool upperHalf = character.Equals('B') || character.Equals('R');
+            //    if (upperHalf)
+            //    {
+            //        var temp = Math.Ceiling((end + start) / 2);
+            //        start = temp;
+            //    }
+            //    else
+            //    {
+            //        var temp = Math.Floor((end + start) / 2);
+            //        end = temp;
+            //    }
+            //}
+
+            //return (int)start;
         }
 
     }
