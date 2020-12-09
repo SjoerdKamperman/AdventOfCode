@@ -5,6 +5,8 @@ using AdventOfCode2020.Day4;
 using AdventOfCode2020.Day5;
 using AdventOfCode2020.Day6;
 using AdventOfCode2020.Day7;
+using AdventOfCode2020.Day8;
+using AdventOfCode2020.Day9;
 using System;
 
 namespace AdventOfCode2020
@@ -48,12 +50,20 @@ namespace AdventOfCode2020
             //day6.SumUpAnsweredYes();
 
             //Day 7
-            var day7 = new ProgramDay7(@"C:\Users\skamperm\source\repos\AdventOfCode\AdventOfCode2020\Day7\day7.txt");
-            day7.ConvertInputIntoBagRegulations();
-            var answer = day7.FindTotalBagColorsNeeded("shiny gold bags");
-            Console.WriteLine(answer);
-            answer = day7.TotalBagsNeeded("shiny gold bags");
-            Console.WriteLine(answer);
+            //var day7 = new ProgramDay7(@"C:\Users\skamperm\source\repos\AdventOfCode\AdventOfCode2020\Day7\day7.txt");
+            //day7.ConvertInputIntoBagRegulations();
+            //var answer = day7.FindTotalBagColorsNeeded("shiny gold bags");
+            //Console.WriteLine(answer);
+            //answer = day7.TotalBagsNeeded("shiny gold bags");
+            //Console.WriteLine(answer);
+
+            //Day 8
+            //var day8 = new ProgramDay8(@"C:\Users\skamperm\source\repos\AdventOfCode\AdventOfCode2020\Day8\day8.txt");
+            //day8.ExecuteProgramOne();
+
+            //Day 9
+            var day9 = new ProgramDay9(@"C:\Users\skamperm\source\repos\AdventOfCode\AdventOfCode2020\Day9\day9.txt", 25);
+            day9.ExecuteProgramOne();
         }
     }
 }
