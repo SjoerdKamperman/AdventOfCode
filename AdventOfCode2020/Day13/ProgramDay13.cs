@@ -35,20 +35,20 @@ namespace AdventOfCode2020.Day13
 
             // Part 2
             {
-                string[] bus = Input[1].Split(",");
+                string[] busId = Input[1].Split(",");
                 var time = 0L;
-                var inc = long.Parse(bus[0]);
-                for (var i = 1; i < bus.Length; i++)
+                var increaseTime = long.Parse(busId[0]);
+                for (var i = 1; i < busId.Length; i++)
                 {
-                    if (!bus[i].Equals("x"))
+                    if (!busId[i].Equals("x"))
                     {
-                        var newTime = int.Parse(bus[i]);
+                        var newTime = int.Parse(busId[i]);
                         while (true)
                         {
-                            time += inc;
+                            time += increaseTime;
                             if ((time + i) % newTime == 0)
                             {
-                                inc *= newTime;
+                                increaseTime *= newTime;
                                 break;
                             }
                         }
