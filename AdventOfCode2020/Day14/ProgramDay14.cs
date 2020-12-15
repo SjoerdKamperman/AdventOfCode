@@ -74,8 +74,8 @@ namespace AdventOfCode2020.Day14
 
         private List<string> ExecMask(string value, bool floating)
         {
-            var ret = new List<string>();
-            ret.Add("");
+            var result = new List<string>();
+            result.Add("");
             var tempValue = new StringBuilder(value);
             for (int i = 0; i < CurrentMask.Length; i++)
             {
@@ -83,28 +83,28 @@ namespace AdventOfCode2020.Day14
                 {
                     if (CurrentMask[i].Equals('X'))
                     {
-                        int s = ret.Count;
+                        int s = result.Count;
 
                         for (int j = 0; j < s; j++)
                         {
-                            var add = ret.ElementAt(0);
-                            ret.RemoveAt(0);
-                            ret.Add(add + "0");
-                            ret.Add(add + "1");
+                            var add = result.ElementAt(0);
+                            result.RemoveAt(0);
+                            result.Add(add + "0");
+                            result.Add(add + "1");
                         }
                     }
                     else if (CurrentMask[i].Equals('1'))
                     {
-                        for (int j = 0; j < ret.Count; j++)
+                        for (int j = 0; j < result.Count; j++)
                         {
-                            ret[j] = ret[j] + "1";
+                            result[j] = result[j] + "1";
                         }
                     }
                     else if (CurrentMask[i].Equals('0'))
                     {
-                        for (int j = 0; j < ret.Count; j++)
+                        for (int j = 0; j < result.Count; j++)
                         {
-                            ret[j] = ret[j] + value.Substring(i, 1);
+                            result[j] = result[j] + value.Substring(i, 1);
                         }
                     }
                 }
@@ -130,11 +130,11 @@ namespace AdventOfCode2020.Day14
 
             if (!floating)
             {
-                ret.RemoveAt(0);
-                ret.Add(tempValue.ToString());
+                result.RemoveAt(0);
+                result.Add(tempValue.ToString());
             }
             
-            return ret;
+            return result;
 
         }
 
