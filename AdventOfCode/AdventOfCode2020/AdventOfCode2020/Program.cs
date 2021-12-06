@@ -5,7 +5,12 @@ using AdventOfCode2020.Day12;
 using AdventOfCode2020.Day13;
 using AdventOfCode2020.Day14;
 using AdventOfCode2020.Day15;
+using AdventOfCode2020.Day16;
+using AdventOfCode2020.Day17;
+using AdventOfCode2020.Day18;
+using AdventOfCode2020.Day19;
 using AdventOfCode2020.Day2;
+using AdventOfCode2020.Day20;
 using AdventOfCode2020.Day3;
 using AdventOfCode2020.Day4;
 using AdventOfCode2020.Day5;
@@ -107,8 +112,29 @@ namespace AdventOfCode2020
             //day14.SolveOne();
 
             //Day 15
-            var day15 = new ProgramDay15(path, 15);
-            day15.SolveOne(30000000);
-        }
+            //var day15 = new ProgramDay15(path, 15);
+            //day15.SolveOne(30000000);
+
+            //Day 16
+            //var day16 = new ProgramDay16(path, 16);
+            //day16.SolveOne();
+            //day16.SolveTwo();
+
+            //Day 17
+            //var day17 = new ProgramDay17();
+            //day17.Solve();
+
+            //Day 18
+            //var day18 = new ProgramDay18(path, 18);
+            //day18.Solve();
+
+            //Day 19
+            //var day19 = new ProgramDay19(path, 19);
+            //day19.SolveOne();
+
+            //Day 20
+            var day20 = new ProgramDay20(path, 20);
+            day20.SolveOne();
+         }
     }
 }
