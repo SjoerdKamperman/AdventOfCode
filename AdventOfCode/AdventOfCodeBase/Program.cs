@@ -1,39 +1,34 @@
-﻿using AdventOfCode2021;
+﻿using AdventOfCode.Shared.Intf;
+using AdventOfCode2022;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using System;
 
-namespace AdventOfCodeBase
-{
-    internal class Program
+using IHost host = Host.CreateDefaultBuilder(args)
+    .ConfigureServices((_, services) =>
     {
-        static void Main(string[] args)
-        {
-            //var day01 = new Day_01();
-            //day01.Solve_One();
-            //day01.Solve_Two();
+        services.AddScoped<ISolve, SolveDay01>();
+        services.AddScoped<ISolve, SolveDay02>();
 
-            //var day02 = new Day_02();
-            //day02.Solve_One();
-            //day02.Solve_Two();
+    }).Build();
 
-            //var day03 = new Day_03();
-            //day03.Solve_One();
-            //day03.Solve_Two();
+ExemplifyScoping(host.Services, "Scope 1");
 
-            //var day04 = new Day_04();
-            //day04.Solve_One();
-            //day04.Solve_Two();
+await host.RunAsync();
 
-            //var day05 = new Day_05();
-            //day05.Solve_One();
-            //day05.Solve_Two();
+static void ExemplifyScoping(IServiceProvider services, string scope)
+{
+    using IServiceScope serviceScope = services.CreateScope();
+    IServiceProvider provider = serviceScope.ServiceProvider;
 
-            //var day06 = new Day_06();
-            //day06.Solve_One();
-            //day06.Solve_Two();
+    var allDays = provider.GetServices<ISolve>();
 
-            var day07 = new Day_07();
-            day07.Solve_One();
-            day07.Solve_Two();
-        }
+    foreach (var day in allDays)
+    {
+        Console.WriteLine($"--------------- Start Puzzle {day.GetType().Name} ---------------\r\n");
+        day.SolvePartOne();
+        Console.WriteLine($"--------------- BREAK ---------------\r\n");
+        day.SolvePartTwo();
+        Console.WriteLine($"--------------- End Puzzle {day.GetType().Name} ---------------\r\n");
     }
 }
