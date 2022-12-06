@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -7,7 +7,46 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Inputs\Day01.txt" />
+    <None Remove="Inputs\Day02.txt" />
+    <None Remove="Inputs\Day03.txt" />
+    <None Remove="Inputs\Day04.txt" />
+    <None Remove="Inputs\Day05.txt" />
+    <None Remove="Inputs\Day06.txt" />
+    <None Remove="Inputs\Day07.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Inputs\Day07.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Inputs\Day06.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Inputs\Day05.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Inputs\Day04.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Inputs\Day03.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Inputs\Day02.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Inputs\Day01.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\..\..\Shared\AdventOfCode.Shared\AdventOfCode.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Inputs\Day01.txt" />
+    <Resource Include="SolveDay01.cs" />
   </ItemGroup>
 
 </Project>
