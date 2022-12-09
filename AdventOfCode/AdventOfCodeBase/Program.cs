@@ -13,6 +13,9 @@ using IHost host = Host.CreateDefaultBuilder(args)
         services.AddScoped<ISolve, SolveDay04>();
         services.AddScoped<ISolve, SolveDay05>();
         services.AddScoped<ISolve, SolveDay06>();
+        services.AddScoped<ISolve, SolveDay07>();
+        services.AddScoped<ISolve, SolveDay08>();
+        services.AddScoped<ISolve, SolveDay09>();
 
     }).Build();
 
